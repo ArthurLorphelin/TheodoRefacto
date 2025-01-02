@@ -22,8 +22,8 @@ Votre objectif est d'ajouter un nouveau médicament que nous venons d'acquérir 
 
 Mais d'abord, laissez-moi vous présenter notre système:
 
-* Tous les médicaments ont une valeur use_before qui désigne le nombre de jours restants avant leurs dates de péremption.
-* Tous les médicaments ont une efficiency en pourcentage qui dénote combien le médicament est efficace.
+* Tous les médicaments ont une valeur ```use_before``` qui désigne le nombre de jours restants avant leurs dates de péremption.
+* Tous les médicaments ont une ```efficiency``` en pourcentage qui dénote combien le médicament est efficace.
 * A la fin de chaque journée, notre système diminue ces deux valeurs pour chaque médicament (de 1 jour et 1%)
 
 Plutôt simple, non ?
