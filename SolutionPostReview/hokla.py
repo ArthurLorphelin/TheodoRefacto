@@ -5,9 +5,6 @@ class Inventory(object):
     def update_efficiency(self):
         for drug in self.drugs:
             match drug.name:
-                case "Normal Drug":
-                    self.update_normal_drug_use_before(drug)
-                    self.update_normal_drug_efficiency(drug)
                 case "Old bottle of wine":
                     self.update_old_bottle_of_wine_use_before(drug)
                     self.update_old_bottle_of_wine_efficiency(drug)
@@ -20,6 +17,9 @@ class Inventory(object):
                 case "ARN Vaccine":
                     self.update_arn_vaccine_use_before(drug)
                     self.update_arn_vaccine_efficiency(drug)
+                case default:
+                    self.update_normal_drug_use_before(drug)
+                    self.update_normal_drug_efficiency(drug)
 
 
 
