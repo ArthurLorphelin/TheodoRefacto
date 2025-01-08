@@ -17,7 +17,8 @@ class MyTestCase(unittest.TestCase):
             Drug("Insulin vial", 4, 21),
             Drug("Insulin vial", 0, 12),
             Drug("Insulin vial", -9, 12),
-            Drug("ARN Vaccine", 3, 6)
+            Drug("ARN Vaccine", 3, 6),
+            Drug("ARN Vaccine", -6, 14)
         ]
         self.inventory = Inventory(self.items)
 
@@ -111,6 +112,13 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(arn_vaccine.name, "ARN Vaccine")
         self.assertEqual(arn_vaccine.use_before, 2)
         self.assertEqual(arn_vaccine.efficiency, 4)
+
+    def test_arn_vaccine_negative_use_before(self):
+        self.inventory.update_efficiency()
+        arn_vaccine = self.items[13]
+        self.assertEqual(arn_vaccine.name, "ARN Vaccine")
+        self.assertEqual(arn_vaccine.use_before, -7)
+        self.assertEqual(arn_vaccine.efficiency, 10)
 
 
 if __name__ == '__main__':
