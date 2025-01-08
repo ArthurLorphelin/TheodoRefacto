@@ -4,6 +4,8 @@ class Inventory(object):
 
     def update_efficiency(self):
         for drug in self.drugs:
+            if drug.efficiency < 0:
+                raise Exception("Efficiency must be positive")
             match drug.name:
                 case "Old bottle of wine":
                     self.update_old_bottle_of_wine_use_before(drug)
