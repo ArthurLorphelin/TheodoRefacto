@@ -11,6 +11,9 @@ class Inventory(object):
                 case "Old bottle of wine":
                     self.update_old_bottle_of_wine_use_before(drug)
                     self.update_old_bottle_of_wine_efficiency(drug)
+                case "Granny Recipe":
+                    self.update_granny_recipe_use_before()
+                    self.update_granny_recipe_efficiency()
 
 
     def update_normal_drug_use_before(self, drug):
@@ -27,6 +30,12 @@ class Inventory(object):
 
     def update_old_bottle_of_wine_efficiency(self, drug):
         drug.efficiency += 1
+
+    def update_granny_recipe_use_before(self):
+        pass
+
+    def update_granny_recipe_efficiency(self):
+        pass
 
 
 class Drug:
