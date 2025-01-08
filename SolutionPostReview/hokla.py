@@ -8,7 +8,7 @@ class Inventory(object):
                 case "Old bottle of wine":
                     self.update_old_bottle_of_wine_use_before(drug)
                     self.update_old_bottle_of_wine_efficiency(drug)
-                case "Granny Recipe":
+                case "Granny recipe":
                     self.update_granny_recipe_use_before()
                     self.update_granny_recipe_efficiency()
                 case "Insulin vial":
