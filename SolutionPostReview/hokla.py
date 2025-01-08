@@ -14,6 +14,10 @@ class Inventory(object):
                 case "Granny Recipe":
                     self.update_granny_recipe_use_before()
                     self.update_granny_recipe_efficiency()
+                case "Insulin vial":
+                    self.update_insulin_vial_use_before(drug)
+                    self.update_insulin_vial_efficiency(drug)
+
 
 
     def update_normal_drug_use_before(self, drug):
@@ -36,6 +40,20 @@ class Inventory(object):
 
     def update_granny_recipe_efficiency(self):
         pass
+
+    def update_insulin_vial_use_before(self, drug):
+        drug.use_before -= 1
+
+    def update_insulin_vial_efficiency(self, drug):
+        if drug.use_before < 0:
+            drug.efficiency = 0
+        elif drug.use_before <= 7:
+            drug.efficiency = max(drug.efficiency - 3, 0)
+        elif drug.use_before <= 30:
+            drug.efficiency = max(drug.efficiency - 2, 0)
+        else:
+            drug.efficiency = max(drug.efficiency - 1, 0)
+
 
 
 class Drug:
